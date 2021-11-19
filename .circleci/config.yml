@@ -1,0 +1,18 @@
+version: 2.1
+# Need to have setup: true; this tells CircleCI that you're trying 
+# to setup dynamic config
+setup: true
+
+orbs:
+  path-filtering: circleci/path-filtering@0.1.0
+
+# Workflow using path-filtering orb with built-in configuration
+workflows:
+  setup-workflow:
+    jobs:
+      - path-filtering/filter:
+          mapping: |
+            packages/app/.* app true
+            packages/api/.* api true
+            packages/auth/.* auth true
+            packages/unit/.* unit true
