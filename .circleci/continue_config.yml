@@ -49,7 +49,7 @@ jobs:
           type: string
       docker:
         - image: circleci/android:api-30
-      parallelism: 4
+      parallelism: 8
       steps:
         - checkout
         - android/accept-licenses
