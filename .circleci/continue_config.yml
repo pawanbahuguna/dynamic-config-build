@@ -63,13 +63,11 @@ jobs:
             command: << parameters.bazel-version >> build //packages/app/src:app # Depending on your Bazel package and target
         - store_test_results:
             path: ~/project/bazel-testlogs/app/src/unit_tests
-        - store_artifacts:
-            path: ~/project/bazel-testlogs/app/src/unit_tests
-        - store_artifacts:
+        - store_artifacts_app:
             path: ~/project/bazel-bin/app/src/app.apk
-        - store_artifacts:
+        - store_artifacts_unsigned:
             path: ~/project/bazel-bin/app/src/app_unsigned.apk
-        - store_artifacts:
+        - store_artifacts_pipeline:
             path: .circleci/pipeline.yml
             destination: yaml/pipeline.yml
   api-build:
