@@ -61,10 +61,6 @@ jobs:
         - run:
             name: Run build
             command: << parameters.bazel-version >> build //packages/app/src:app # Depending on your Bazel package and target
-        - run:
-          name: echo Hello
-          command: |
-            echo "This is the app project"
         - store_test_results:
             path: ~/project/bazel-testlogs/app/src/unit_tests
         - store_artifacts:
