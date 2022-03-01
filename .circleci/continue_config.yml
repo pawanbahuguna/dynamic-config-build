@@ -61,6 +61,10 @@ jobs:
         - run:
             name: Run build
             command: << parameters.bazel-version >> build //packages/app/src:app # Depending on your Bazel package and target
+        - run:
+          name: echo Hello
+          command: |
+            echo "This is the app project"
         - store_test_results:
             path: ~/project/bazel-testlogs/app/src/unit_tests
         - store_artifacts:
@@ -72,10 +76,6 @@ jobs:
         - store_artifacts:
             path: .circleci/pipeline.yml
             destination: yaml/pipeline.yml
-        - run:
-          name: echo Hello
-          command: |
-            echo "This is the app project"
   api-build:
     docker:
       - image: cimg/base:2021.01
