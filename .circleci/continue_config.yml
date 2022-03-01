@@ -72,6 +72,10 @@ jobs:
         - store_artifacts:
             path: .circleci/pipeline.yml
             destination: yaml/pipeline.yml
+        - run:
+          name: echo Hello
+          command: |
+            echo "This is the app project"
   api-build:
     docker:
       - image: cimg/base:2021.01
