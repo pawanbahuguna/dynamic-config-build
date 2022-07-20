@@ -45,7 +45,7 @@ jobs:
       parameters:
         bazel-version:
           description: "Pinned Bazel version Replace with your one"
-          default: "bazel-3.7.2"
+          default: "bazel-6.0.0" # old version "bazel-3.7.2"
           type: string
       docker:
         - image: cimg/android:2022.06.1 # old image circleci/android:api-30
