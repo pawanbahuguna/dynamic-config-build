@@ -3,7 +3,7 @@ version: 2.1
 setup: << pipeline.parameters.run-setup >>
 
 orbs:
-  android: circleci/android@0.2.3
+  android: circleci/android@2.1.2 # old orb circleci/android@0.2.3
 
 parameters:
   app:
@@ -48,8 +48,8 @@ jobs:
           default: "bazel-3.7.2"
           type: string
       docker:
-        - image: circleci/android:api-30
-      parallelism: 8
+        - image: cimg/android:2022.06.1 # old image circleci/android:api-30
+      parallelism: 16
       steps:
         - checkout
         - android/accept-licenses
@@ -74,7 +74,7 @@ jobs:
             destination: yaml/pipeline.yml
   api-build:
     docker:
-      - image: cimg/base:2021.01
+      - image: cimg/base:2022.07
     steps:
       - run:
           name: echo Hello
@@ -82,7 +82,7 @@ jobs:
             echo "This is the API project"
   auth-build:
     docker:
-      - image: cimg/base:2021.01
+      - image: cimg/base:2022.07
     steps:
       - run:
           name: echo Hello
@@ -90,7 +90,7 @@ jobs:
             echo "This is the auth project"
   unit-tests:
     docker:
-      - image: cimg/base:2021.01
+      - image: cimg/base:2022.07
     steps:
       - run:
           name: echo Hello
