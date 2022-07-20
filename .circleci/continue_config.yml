@@ -57,7 +57,7 @@ jobs:
             bazel-version: <<parameters.bazel-version>>
         - run:
             name: Run tests
-            command: << parameters.bazel-version >> test //packages/app/src:unit_tests | circleci tests split --split-by=timings # Depending on your Bazel package and target
+            command: << parameters.bazel-version >> test //packages/app/src:unit_tests # Depending on your Bazel package and target
         - run:
             name: Run build
             command: << parameters.bazel-version >> build //packages/app/src:app # Depending on your Bazel package and target
