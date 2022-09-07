@@ -50,7 +50,7 @@ jobs:
           type: string
       docker:
         - image: cimg/android:2021.08.1-ndk # old image circleci/android:api-30
-      parallelism: 10
+      parallelism: 5
       steps:
         - checkout
         - android/accept-licenses
