@@ -30,4 +30,4 @@ The sample project is a minimal Android app written in Kotlin with a Bazel build
 
 ## Known issues
 
-- Android Studio doesn't want to run the Robolectric tests due to Java 8 incopatibility. Tests run when run from the commandline using `bazel test //src/main:unit_test`
+- Android Studio doesn't want to run the Robolectric tests due to Java 8 incopatibility. Tests run when run from the commandline using `bazel test //src/main:unit_test` 
